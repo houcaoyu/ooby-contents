@@ -1,0 +1,18 @@
+.color_css(@name,@color){
+  .font-@{name}{
+  	color:@color;
+  }
+  .bg-@{name}{
+  	background-color: @color;
+  }
+  .bg-font-@{name}{
+  	background-color: @color;
+  	color:#fff;
+  }
+  .btn-@{name}-o,.btn-@{name}-o:hover,.btn-@{name}-o:focus{
+  	color: @color;
+      background-color: #fff;
+      border-color: @color;
+  }
+}
+.color_css(grey-salsa,#acb5c3);

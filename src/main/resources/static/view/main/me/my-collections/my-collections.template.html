@@ -1,0 +1,37 @@
+<div style="padding-top:50px;">
+<div class="navbar-fixed-top">
+  <nav class="navbar navbar-home">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="icon pull-left"><a ng-click="$state.back()" class="as-text"><i class="fa fa-angle-left fa-2x"></i></a></div>
+        </div>
+        <div class="col-xs-6">
+          <h3 class="title">{{title}}</h3>
+        </div>
+        <div class="col-xs-3">
+
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="block">
+  <div class="container">
+    <div class="block-content">
+      <div class="row list-item" ng-repeat="content in contents" ui-sref="content({contentId:content.id})">
+        <div class="col-xs-3">
+          <thumbnail type="'content'" id="content.id"/>
+        </div>
+        <div class="col-xs-7">
+          <h4>{{content.title}}</h4>
+          <div class="font-grey-mint"><small>阅读:{{content.pv}}   评论:{{content.commentSize}}   喜欢:{{content.fanSize}}</small></div>
+        </div>
+        <div class="col-xs-2 arrow font-grey-mint">
+          <small>12天前</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

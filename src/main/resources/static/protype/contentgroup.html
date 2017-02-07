@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>专辑详情</title>
+
+<!-- Bootstrap -->
+<link href="/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<!-- Font Awesome -->
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/app.css" />
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src='/libs/jquery/jquery-2.0.0.min.js'></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</head>
+<body style="padding-top:50px;">
+	<div class="navbar-fixed-top">
+		<nav class="navbar navbar-home">
+			<div class="container-fluid text-center">
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="icon pull-left"><a href="javascript:history.back(-1)" class="as-text"><i class="fa fa-angle-left fa-2x"></i></a></div>
+					</div>
+					<div class="col-xs-6">
+						<h3 class="title">专辑详情</h3>
+					</div>
+					<div class="col-xs-3">
+						
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+	
+	<div class="block">
+		<div class="container">
+			<div class="row list-item">
+				<div class="col-xs-5">
+					<div class="image"></div>
+				</div>
+				<div class="col-xs-7">
+					<h3>小贝流浪记</h3>
+					<div class="font-grey-mint"><small>作者：<a href="author.html ">Houcaoyu</a></small></div>
+					<div class="font-grey-mint"><small>访问：55.7万</small></div>
+					<div class="font-grey-mint"><small>分类：<a href="category.html">儿童</a></small></div>
+					<div><a href="#" class="btn btn-red-haze-o"><i class="fa fa-star-o inline-icon"></i>订阅</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="block">
+		<div class="container">
+			<div class="block-title">
+				<span><i class="fa fa-tags inline-icon font-red-haze"></i>标签</span>
+			</div>
+			<div class="block-content text-center">
+				<div class="row">
+					<div class="col-xs-4">
+						<a class="btn btn-red-haze-o" style="width:100%">儿童</a>
+					</div>
+					<div class="col-xs-4">
+						<a class="btn btn-red-haze-o" style="width:100%">童话</a>
+					</div>
+					<div class="col-xs-4">
+						<a class="btn btn-red-haze-o" style="width:100%">小动物</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<ul class="nav nav-tabs tab-in-block">
+		<li class="active"><a href="#detail" data-toggle="tab">详情</a></li>
+		<li><a href="#content" data-toggle="tab">内容(20)</a></li>
+	</ul>
+	<div class="tab-content">
+		<div class="tab-pane active" id="detail">
+			<div class="block">
+				<div class="container">
+					<div class="block-title">
+						<span>内容简介</span>
+					</div>
+					<div class="block-content">
+						一只小猫找妈妈的故事</br>
+						一只小猫找妈妈的故事</br>
+						一只小猫找妈妈的故事</br>
+						一只小猫找妈妈的故事</br>
+						一只小猫找妈妈的故事</br>
+						一只小猫找妈妈的故事</br>
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="container">
+					<div class="block-title">
+						<span>作者简介</span>
+					</div>
+					<div class="row list-item">
+						<div class="col-xs-3">
+							<div class="image" style="border-radius:100%;background-size:cover"></div>
+						</div>
+						<div class="col-xs-7">
+							<h4>侯操宇</h4>
+							<div class="font-grey-mint"><small>已经被5.3万人关注</small></div>
+						</div>
+						<div class="col-xs-2 arrow font-red-haze text-center">
+							<span class="fa-stack">
+								<i class="fa fa-user-o fa-stack-2x"></i>
+								<i class="fa fa-plus fa-stack-1x" style="left: 10px;top: 6px;"></i>
+							</span>
+							<div><small>关注</small></div>
+						</div>
+					</div>
+					<div class="list-item">
+						作者2002毕业于XX大学，然后开始从事写作事业，主要作品有：
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane" id="content">
+			<div class="block">
+				<div class="container">
+					<div class="block-title">
+						<span>共20集</span>
+					</div>
+					<div class="block-content">
+						<div class="row list-item">
+							<div class="col-xs-3">
+								<div class="image"></div>
+							</div>
+							<div class="col-xs-7">
+								<h4>小贝走失[小贝流浪记]No-001</h4>
+								<div class="font-grey-mint"><small>阅读:9532   评论:2324   喜欢:5000</small></div>
+							</div>
+							<div class="col-xs-2 arrow font-grey-mint">
+								<small>12天前</small>
+							</div>
+						</div>
+						<div class="row list-item">
+							<div class="col-xs-3">
+								<div class="image"></div>
+							</div>
+							<div class="col-xs-7">
+								<h4>小贝走失[小贝流浪记]No-001</h4>
+								<div class="font-grey-mint"><small>阅读:9532   评论:2324   喜欢:5000</small></div>
+							</div>
+							<div class="col-xs-2 arrow font-grey-mint">
+								<small>12天前</small>
+							</div>
+						</div>
+						<div class="row list-item">
+							<div class="col-xs-3">
+								<div class="image"></div>
+							</div>
+							<div class="col-xs-7">
+								<h4>小贝走失[小贝流浪记]No-001</h4>
+								<div class="font-grey-mint"><small>阅读:9532   评论:2324   喜欢:5000</small></div>
+							</div>
+							<div class="col-xs-2 arrow font-grey-mint">
+								<small>12天前</small>
+							</div>
+						</div>
+						<div class="row list-item">
+							<div class="col-xs-3">
+								<div class="image"></div>
+							</div>
+							<div class="col-xs-7">
+								<h4>小贝走失[小贝流浪记]No-001</h4>
+								<div class="font-grey-mint"><small>阅读:9532   评论:2324   喜欢:5000</small></div>
+							</div>
+							<div class="col-xs-2 arrow font-grey-mint">
+								<small>12天前</small>
+							</div>
+						</div>
+						<div class="row list-item">
+							<div class="col-xs-3">
+								<div class="image"></div>
+							</div>
+							<div class="col-xs-7">
+								<h4>小贝走失[小贝流浪记]No-001</h4>
+								<div class="font-grey-mint"><small>阅读:9532   评论:2324   喜欢:5000</small></div>
+							</div>
+							<div class="col-xs-2 arrow font-grey-mint">
+								<small>12天前</small>
+							</div>
+						</div>
+						<div class="row list-item">
+							<div class="col-xs-3">
+								<div class="image"></div>
+							</div>
+							<div class="col-xs-7">
+								<h4>小贝走失[小贝流浪记]No-001</h4>
+								<div class="font-grey-mint"><small>阅读:9532   评论:2324   喜欢:5000</small></div>
+							</div>
+							<div class="col-xs-2 arrow font-grey-mint">
+								<small>12天前</small>
+							</div>
+						</div>
+						<div class="row list-item">
+							<div class="col-xs-3">
+								<div class="image"></div>
+							</div>
+							<div class="col-xs-7">
+								<h4>小贝走失[小贝流浪记]No-001</h4>
+								<div class="font-grey-mint"><small>阅读:9532   评论:2324   喜欢:5000</small></div>
+							</div>
+							<div class="col-xs-2 arrow font-grey-mint">
+								<small>12天前</small>
+							</div>
+						</div>
+						<div class="row list-item">
+							<div class="col-xs-3">
+								<div class="image"></div>
+							</div>
+							<div class="col-xs-7">
+								<h4>小贝走失[小贝流浪记]No-001</h4>
+								<div class="font-grey-mint"><small>阅读:9532   评论:2324   喜欢:5000</small></div>
+							</div>
+							<div class="col-xs-2 arrow font-grey-mint">
+								<small>12天前</small>
+							</div>
+						</div>
+						<div class="row list-item">
+							<div class="col-xs-3">
+								<div class="image"></div>
+							</div>
+							<div class="col-xs-7">
+								<h4>小贝走失[小贝流浪记]No-001</h4>
+								<div class="font-grey-mint"><small>阅读:9532   评论:2324   喜欢:5000</small></div>
+							</div>
+							<div class="col-xs-2 arrow font-grey-mint">
+								<small>12天前</small>
+							</div>
+						</div>
+						<div class="row list-item">
+							<div class="col-xs-3">
+								<div class="image"></div>
+							</div>
+							<div class="col-xs-7">
+								<h4>小贝走失[小贝流浪记]No-001</h4>
+								<div class="font-grey-mint"><small>阅读:9532   评论:2324   喜欢:5000</small></div>
+							</div>
+							<div class="col-xs-2 arrow font-grey-mint">
+								<small>12天前</small>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

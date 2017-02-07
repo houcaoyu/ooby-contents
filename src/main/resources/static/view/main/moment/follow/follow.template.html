@@ -1,0 +1,15 @@
+<div class="block">
+  <div class="container">
+    <div class="row list-item" ng-repeat="contentGroup in contentGroups" ui-sref="contentgroup({contentGroupId:contentGroup.id})">
+      <div class="col-xs-3">
+        <div class="image"></div>
+      </div>
+      <div class="col-xs-8">
+        <h4>{{contentGroup.name}}</h4>
+        <div class="font-grey-mint"><small>{{contentGroup.description || '&nbsp'}}</small></div>
+        <div class="font-grey-mint"><small>by {{contentGroup.user.nickname}}</small></div>
+      </div>
+      <div class="col-xs-1 arrow"><i class="fa fa-angle-right"></i></div>
+    </div>
+  </div>
+</div>

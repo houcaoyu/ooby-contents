@@ -1,0 +1,16 @@
+<div class="block" ng-init="init()">
+  <div class="container">
+    <div class="block-title">
+      <span><i class="fa fa-toggle-right inline-icon font-red-haze"></i>{{category.name}}</span>
+      <div class="link"><a ui-sref="category({categoryId:$ctrl.categoryId})" class="as-text">更多 ></a></div>
+    </div>
+    <div class="block-content">
+      <div class="row text-center" ng-repeat="row in contentGroups">
+        <div class="col-xs-4 image-text" ng-repeat="contentGroup in row" ui-sref="contentgroup({contentGroupId:contentGroup.id})" ng-click="setAnimateType('slide-in-right')">
+          <thumbnail type="'contentgroup'" id="contentGroup.id"/>
+          <div class="text">{{contentGroup.name}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

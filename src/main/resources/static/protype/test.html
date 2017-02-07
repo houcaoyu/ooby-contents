@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>test page</title>
+<!-- Bootstrap -->
+<link href="/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="/libs/font-awesome/css/font-awesome.min.css" />
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src='/libs/jquery/jquery-2.0.0.min.js'></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">register</div>
+				<div class="panel-body">
+					<form id="register">
+						<div class="form-group">
+							<label>loginName:</label>
+							<input type="text" name="loginName" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>nickname:</label>
+							<input type="text" name="nickname" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>password:</label>
+							<input type="text" name="password" class="form-control"/>
+						</div>
+					</form>
+					<button class="btn btn-default" id="register_button">register</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">login</div>
+				<div class="panel-body">
+					<form id="login">
+						<div class="form-group">
+							<label>loginName:</label>
+							<input type="text" name="username" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>password:</label>
+							<input type="text" name="password" class="form-control"/>
+						</div>
+					</form>
+					<button class="btn btn-default" id="login_button">login</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">Create Category</div>
+				<div class="panel-body">
+					<form id="createCategory">
+						<div class="form-group">
+							<label>name:</label>
+							<input type="text" name="name" class="form-control" />
+						</div>
+					</form>
+					<button class="btn btn-default" id="createCategory_button">createCategory</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">Create Content Group</div>
+				<div class="panel-body">
+					<form id="createContentGroup">
+						<div class="form-group">
+							<label>name:</label>
+							<input type="text" name="name" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>category.id:</label>
+							<input type="text" name="category.id" class="form-control"/>
+						</div>
+					</form>
+					<button class="btn btn-default" id="createContentGroup_button">createContentGroup</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">Subscribe</div>
+				<div class="panel-body">
+					<form id="subscribe">
+						<div class="form-group">
+							<label>id:</label>
+							<input type="text" name="id" class="form-control"/>
+						</div>
+					</form>
+					<button class="btn btn-default" id="subscribe_button">subscribe</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">Unsubscribe</div>
+				<div class="panel-body">
+					<form id="unsubscribe">
+						<div class="form-group">
+							<label>id:</label>
+							<input type="text" name="id" class="form-control"/>
+						</div>
+					</form>
+					<button class="btn btn-default" id="unsubscribe_button">unsubscribe</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">createContent</div>
+				<div class="panel-body">
+					<form id="createContent">
+						<div class="form-group">
+							<label>title:</label>
+							<input type="text" name="title" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>text:</label>
+							<input type="text" name="text" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>contentGroup.id:</label>
+							<input type="text" name="contentGroup.id" class="form-control"/>
+						</div>
+					</form>
+					<button class="btn btn-default" id="createContent_button">createContent</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">like</div>
+				<div class="panel-body">
+					<form id="like">
+						<div class="form-group">
+							<label>id:</label>
+							<input type="text" name="id" class="form-control"/>
+						</div>
+					</form>
+					<button class="btn btn-default" id="like_button">like</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">collect</div>
+				<div class="panel-body">
+					<form id="collect">
+						<div class="form-group">
+							<label>id:</label>
+							<input type="text" name="id" class="form-control"/>
+						</div>
+					</form>
+					<button class="btn btn-default" id="collect_button">collect</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+$('#createCategory_button').click(function(){
+	$.post('/cgc/create',$('#createCategory').serialize(),function(){
+		alert('success')
+	})
+})
+$('#register_button').click(function(){
+	$.post('/user/register',$('#register').serialize(),function(){
+		alert('success')
+	})
+})
+$('#login_button').click(function(){
+	$.post('/login',$('#login').serialize(),function(){
+		alert('success')
+	})
+})
+$('#createContent_button').click(function(){
+	$.post('/content/create',$('#createContent').serialize(),function(){
+		alert('success')
+	})
+})
+$('#like_button').click(function(){
+	$.post('/content/like',$('#like').serialize(),function(){
+		alert('success')
+	})
+})
+$('#collect_button').click(function(){
+	$.post('/content/collect',$('#collect').serialize(),function(){
+		alert('success')
+	})
+})
+$('#createContentGroup_button').click(function(){
+	$.post('/contentgroup/create',$('#createContentGroup').serialize(),function(){
+		alert('success')
+	})
+})
+$('#subscribe_button').click(function(){
+	$.post('/contentgroup/subscribe',$('#subscribe').serialize(),function(){
+		alert('success')
+	})
+})
+$('#unsubscribe_button').click(function(){
+	$.post('/contentgroup/unsubscribe',$('#unsubscribe').serialize(),function(){
+		alert('success')
+	})
+})
+</script>
+</body>
+</html>

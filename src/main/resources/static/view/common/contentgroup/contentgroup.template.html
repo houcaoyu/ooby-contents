@@ -1,0 +1,122 @@
+<div style="padding-top:50px;" ng-if="contentGroup">
+<div class="navbar-fixed-top">
+  <nav class="navbar navbar-home">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="icon pull-left"><a class="as-text" ng-click="setAnimateType('slide-out-right');$state.back()"><i class="fa fa-angle-left fa-2x"></i></a></div>
+        </div>
+        <div class="col-xs-6">
+          <h3 class="title">专辑详情</h3>
+        </div>
+        <div class="col-xs-3">
+          <div class="icon pull-right" ng-if="isOwn"><a ui-sref="editcontentgroup({contentGroupId:contentGroup.id})" class="as-text"><i class="fa fa-pencil-square-o fa-2x"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div class="block">
+  <div class="container">
+    <div class="row list-item">
+      <div class="col-xs-5">
+        <thumbnail type="'contentgroup'" id="contentGroup.id"/>
+      </div>
+      <div class="col-xs-7">
+        <h3>{{contentGroup.name}}</h3>
+        <div class="font-grey-mint"><small>作者：<a ui-sref="author({authorId:contentGroup.user.id})">{{contentGroup.user.nickname}}</a></small></div>
+        <div class="font-grey-mint"><small>访问：{{contentGroup.pv}}</small></div>
+        <div class="font-grey-mint"><small>分类：<a ui-sref="category({categoryId:contentGroup.category.id})">{{contentGroup.category.name}}</a></small></div>
+        <div>
+          <a ng-click="subscribe()" class="btn btn-red-haze-o" ng-class="{hidden:contentGroup.subscribed}"><i class="fa fa-star-o inline-icon"></i>订阅</a>
+          <a ng-click="unsubscribe()" class="btn btn-grey-salsa-o" ng-class="{hidden:!contentGroup.subscribed}"><i class="fa fa-star inline-icon"></i>已订阅</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="block" ng-show="contentGroup.splitedTags && contentGroup.splitedTags.length>0">
+  <div class="container">
+    <div class="block-title">
+      <span><i class="fa fa-tags inline-icon font-red-haze"></i>标签</span>
+    </div>
+    <div class="block-content text-center">
+      <div class="row" ng-repeat="row in contentGroup.splitedTags">
+        <div class="col-xs-4" ng-repeat="tag in row">
+          <a class="btn btn-red-haze-o" style="width:100%">{{tag.name}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ul class="nav nav-tabs tab-in-block">
+  <li ng-class="{active:tabView=='detail'}"><a ng-click="tabView='detail'">详情</a></li>
+  <li ng-class="{active:tabView=='content'}"><a ng-click="tabView='content'">内容({{contentGroup.contents.length}})</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane" ng-class="{active:tabView=='detail'}">
+    <div class="block">
+      <div class="container">
+        <div class="block-title">
+          <span>内容简介</span>
+        </div>
+        <div class="block-content">
+          {{contentGroup.description || '该专辑没有内容简介'}}
+        </div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="container">
+        <div class="block-title">
+          <span>作者简介</span>
+        </div>
+        <div class="row list-item" >
+          <div class="col-xs-3" ui-sref="author({authorId:contentGroup.user.id})">
+            <thumbnail type="'user'" id="contentGroup.user.id"/>
+          </div>
+          <div class="col-xs-7" ui-sref="author({authorId:contentGroup.user.id})">
+            <h4>{{contentGroup.user.nickname}}</h4>
+            <div class="font-grey-mint"><small>已经被{{contentGroup.user.followerSize}}人关注</small></div>
+          </div>
+          <div class="col-xs-2 arrow font-red-haze text-center" ng-class="{'font-red-haze':!contentGroup.user.followed,'font-grey-salsa':contentGroup.user.followed}" ng-click="toggleFollow()">
+            <span class="fa-stack">
+              <i class="fa fa-user-o fa-stack-2x"></i>
+              <i class="fa fa-stack-1x" style="left: 10px;top: 6px;" ng-class="{'fa-plus':!contentGroup.user.followed,'fa-check':contentGroup.user.followed}"></i>
+            </span>
+            <div><small>{{contentGroup.user.followed?'已':''}}关注</small></div>
+          </div>
+        </div>
+        <div class="list-item">
+          {{contentGroup.user.description || '该用户尚没有写个人简介'}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane" ng-class="{active:tabView=='content'}">
+    <div class="block">
+      <div class="container">
+        <div class="block-title">
+          <span>共{{contentGroup.contents.length}}集</span>
+          <div class="link" ng-if="isOwn"><a ui-sref="newcontent({contentGroupId:contentGroup.id})" class="as-text">新建 ></a></div>
+        </div>
+        <div class="block-content">
+          <div class="row list-item" ng-repeat="content in contentGroup.contents" ui-sref="content({contentId:content.id})">
+            <div class="col-xs-3">
+              <thumbnail type="'content'" id="content.id"/>
+            </div>
+            <div class="col-xs-7">
+              <h4>{{content.title}}</h4>
+              <div class="font-grey-mint"><small>阅读:{{content.pv}}   评论:{{content.commentSize}}   喜欢:{{content.fanSize}}</small></div>
+            </div>
+            <div class="col-xs-2 arrow font-grey-mint">
+              <small>12天前</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

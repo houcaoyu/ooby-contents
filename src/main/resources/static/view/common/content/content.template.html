@@ -1,0 +1,96 @@
+<div style="padding-top:50px;" ng-if="content">
+  <div class="navbar-fixed-top">
+    <nav class="navbar navbar-home">
+      <div class="container-fluid text-center">
+        <div class="row">
+          <div class="col-xs-3">
+            <div class="icon pull-left"><a ng-click="$state.back()" class="as-text" ng-click="setAnimateType('slide-out-right')"><i class="fa fa-angle-left fa-2x"></i></a></div>
+          </div>
+          <div class="col-xs-6">
+            <h3 class="title">文章</h3>
+          </div>
+          <div class="col-xs-3">
+            <div class="icon pull-right" ng-if="isOwn"><a ui-sref="editcontent({contentId:content.id})" class="as-text"><i class="fa fa-pencil-square-o fa-2x"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="block">
+    <div class="container">
+      <div class="row list-item">
+        <div class="col-xs-5">
+          <thumbnail type="'content'" id="content.id"/>
+        </div>
+        <div class="col-xs-7">
+          <h3>{{content.title}}</h3>
+          <div class="font-grey-mint"><small>作者：<a ui-sref="author({authorId:content.contentGroup.user.id})">{{content.contentGroup.user.nickname}}</a></small></div>
+          <div class="font-grey-mint"><small>访问：{{content.pv}}</small></div>
+          <div class="font-grey-mint"><small>评论：{{content.commentSize}}</small></div>
+          <div class="font-grey-mint"><small>喜欢：{{content.fanSize}}</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="container">
+      {{content.text}}
+    </div>
+  </div>
+  <div class="block">
+    <div class="container">
+      <div class="block-title">
+        <h4>用户评论</h4>
+      </div>
+      <div class="row list-item" ng-repeat="comment in content.comments">
+        <div class="col-xs-3" ui-sref="author({authorId:comment.user.id})">
+          <div class="image" style="border-radius:100%;background-size:cover"></div>
+        </div>
+        <div class="col-xs-6" >
+          <h4>{{comment.user.nickname}}</h4>
+          <div class="font-grey-mint">{{comment.text}}</div>
+        </div>
+        <div class="col-xs-3 text-center" >
+          <span>{{comment.dateTime | date : 'yyyy/MM/dd HH:mm'}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="navbar-fixed-bottom">
+		<nav class="navbar navbar-home" ng-hide="commentDialogShow">
+			<div class="container-fluid text-center" style="margin-top:10px">
+				<div class="row">
+	  			<div class="col-xs-8">
+            <a class="btn btn-default" style="width:100%;" ng-click="showCommentDialog($event)"><i class="fa fa-pencil inline-icon"></i>评论</a>
+          </div>
+          <div class="col-xs-2 font-red-haze" ng-click="toggleLike()">
+            <span><i class="fa fa-2x" ng-class="{'fa-heart-o':!content.liked,'fa-heart':content.liked}"></i></span>
+          </div>
+          <div class="col-xs-2 font-red-haze" ng-click="toggleCollect()">
+            <span><i class="fa fa-2x" ng-class="{'fa-star-o':!content.collected,'fa-star':content.collected}"></i></span>
+          </div>
+				</div>
+			</div>
+		</nav>
+    <nav class="navbar navbar-home" ng-show="commentDialogShow" ng-click="$event.stopPropagation()" >
+			<div class="container-fluid">
+        <form class="navbar-form" name="form" novalidate>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <textarea row="3" class="form-control" style="height:100px;" placeholder="请输入评论内容" ng-model="text" name="aaaa" required="" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 text-right">
+              <button type="submit" class="btn btn-default" ng-click="submitComment()" ng-disabled="form.$invalid">提交</button>
+            </div>
+          </div>
+        </form>
+			</div>
+		</nav>
+	</div>
+</div>

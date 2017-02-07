@@ -1,0 +1,58 @@
+<div style="padding-top:50px;">
+	<div class="navbar-fixed-top">
+		<nav class="navbar navbar-home">
+			<div class="container-fluid text-center">
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="icon pull-left"><a ng-click="setAnimateType('slide-out-right');$state.back()" class="as-text"><i class="fa fa-angle-left fa-2x"></i></a></div>
+					</div>
+					<div class="col-xs-6">
+						<h3 class="title">我</h3>
+					</div>
+					<div class="col-xs-3">
+
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<div class="cover">
+		<div class="cover-bg"></div>
+		<div class="cover-front font-white">
+			<div class="container">
+				<h2>{{user.nickname}}</h2>
+				<div class="row">
+					<div class="col-xs-6">
+						<span class="text-center inline-block vertical-middle font-lighter">
+							<span>{{user.followeeSize}}</span><br/><span>关注</span>
+						</span>
+						<span class="text-center inline-block vertical-middle font-lighter" style="margin:0px 10px;">|</span>
+						<span class="text-center inline-block vertical-middle font-lighter" >
+							<span>{{user.followerSize}}</span><br/><span>粉丝</span>
+						</span>
+					</div>
+					<div class="col-xs-6 text-right">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<ul class="list-group">
+	  <li class="list-group-item" ui-sref="mycontentgroups">我的专辑</li>
+	  <li class="list-group-item" ui-sref="mysubscriptions">我的订阅</li>
+	  <li class="list-group-item" ui-sref="mycollections">我的收藏</li>
+	  <li class="list-group-item" ui-sref="myfollowees">我的关注</li>
+	  <li class="list-group-item" ui-sref="mylikes">我的赞</li>
+	</ul>
+	<div class="container text-center">
+			<button class="btn btn-danger" style="width:80%;" ng-click="logout()">退出</button>
+	</div>
+
+
+
+
+</div>

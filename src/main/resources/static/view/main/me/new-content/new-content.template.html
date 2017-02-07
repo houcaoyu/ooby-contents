@@ -1,0 +1,36 @@
+<div style="padding-top:50px;" ng-if="content">
+<div class="navbar-fixed-top">
+  <nav class="navbar navbar-home">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="icon pull-left"><a ng-click="$state.back()" class="as-text"><i class="fa fa-angle-left fa-2x"></i></a></div>
+        </div>
+        <div class="col-xs-6">
+          <h3 class="title">{{title}}</h3>
+        </div>
+        <div class="col-xs-3">
+          <div class="icon pull-right"><a ui-sref="newcontentgroup" class="as-text"><i class="fa fa-pencil-square-o fa-2x"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <form>
+      <div class="form-group">
+        <label>内容名:</label>
+        <input type="text" ng-model="content.title" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label>描述:</label>
+        <input type="text" ng-model="content.text" class="form-control"/>
+      </div>
+      <div class="btn btn-default btn-upload" upload-button url="/file" on-success="onSuccess(response)">选择图片</div>
+      <div class="image" ng-if="url" style="background-image:url({{url}});" ng-click="upload()"></div>
+    </form>
+    <button class="btn btn-default" ng-click="submit()">提交</button>
+  </div>
+</div>
+</div>

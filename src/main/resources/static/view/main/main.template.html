@@ -1,0 +1,13 @@
+<div style="padding-bottom:50px;">
+  <div class="tab-content">
+  	<div class="tab-pane active">
+      <ui-view></ui-view>
+    </div>
+  </div>
+<ul class="nav nav-tabs tab-bottom navbar-fixed-bottom" ng-controller="test">
+  <li ng-class="{active: $state.includes('main.discovery')}"><a ui-sref="main.discovery" ><i class="fa fa-home fa-2x"></i></a></li>
+  <li ng-class="{active: $state.includes('main.moment')}"><a ui-sref="main.moment" ><i class="fa fa-star-o fa-2x"></i></a></li>
+  <li ng-class="{active: $state.includes('main.message')}"><a ui-sref="main.message" ><i class="fa fa-commenting-o fa-2x"></i></a></li>
+  <li ng-class="{active: $state.includes('main.me')}"><a ui-sref="main.me"><i class="fa fa-user-o fa-2x"></i></a></li>
+</ul>
+</div>

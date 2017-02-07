@@ -1,0 +1,16 @@
+<div	style="padding-top:50px;"	>
+	<div class="navbar-fixed-top">
+		<ul class="nav nav-tabs tab-home">
+			<li ng-class="{active: $state.includes('main.moment.follow')}"><a ui-sref="main.moment.follow">关注</a></li>
+			<li ng-class="{active: $state.includes('main.moment.subscribe')}"><a ui-sref="main.moment.subscribe">订阅</a></li>
+		</ul>
+	</div>
+	  <div>
+	  <!-- Tab panes -->
+	  <div class="tab-content">
+	    <div class="tab-pane active">
+				<ui-view></ui-view>
+			</div>
+	  </div>
+	</div>
+</div>

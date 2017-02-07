@@ -1,0 +1,57 @@
+<div class="block">
+  <div class="container">
+    <div class="block-title">
+      <span><i class="fa fa-toggle-right inline-icon font-red-haze"></i>最热专辑</span>
+    </div>
+    <div class="row list-item" ui-sref="contentgroup({contentGroupId:contentGroup.id})" ng-click="setAnimateType('slide-in-right')" ng-repeat="contentGroup in contentGroups">
+      <div class="col-xs-3">
+        <thumbnail type="'contentgroup'" id="contentGroup.id"/>
+      </div>
+      <div class="col-xs-8">
+        <h3>{{contentGroup.name}}</h3>
+        <div class="font-grey-mint"><small>{{contentGroup.description || '&nbsp'}}</small></div>
+        <div class="font-grey-mint"><small>by {{contentGroup.user.nickname}}</small></div>
+      </div>
+      <div class="col-xs-1 arrow"><i class="fa fa-angle-right"></i></div>
+    </div>
+  </div>
+</div>
+
+<div class="block">
+  <div class="container">
+    <div class="block-title">
+      <span><i class="fa fa-toggle-right inline-icon font-red-haze"></i>最热内容</span>
+    </div>
+    <div class="row list-item" ui-sref="content({contentId:content.id})" ng-click="setAnimateType('slide-in-up')" ng-repeat="content in contents">
+      <div class="col-xs-3">
+        <thumbnail type="'content'" id="content.id"/>
+      </div>
+      <div class="col-xs-7">
+        <h4>{{content.title}}</h4>
+        <div class="font-grey-mint"><small>阅读:{{content.pv}}   评论:{{content.commentSize}}   喜欢:{{content.fanSize}}</small></div>
+      </div>
+      <div class="col-xs-2 arrow font-grey-mint">
+        <small>12天前</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="block">
+  <div class="container">
+    <div class="block-title">
+      <span><i class="fa fa-toggle-right inline-icon font-red-haze"></i>最热用户</span>
+    </div>
+    <div class="row list-item" ui-sref="author({authorId:user.id})" ng-click="setAnimateType('slide-in-right')" ng-repeat="user in users">
+      <div class="col-xs-3">
+        <thumbnail type="'user'" id="user.id"/>
+      </div>
+      <div class="col-xs-8">
+        <h4>{{user.nickname}}</h4>
+        <div class="font-grey-mint"><small>已被{{user.followerSize}}人关注</small></div>
+        <div class="font-grey-mint"><small>{{user.description || '&nbsp'}}</small></div>
+      </div>
+      <div class="col-xs-1 arrow"><i class="fa fa-angle-right"></i></div>
+    </div>
+  </div>
+</div>

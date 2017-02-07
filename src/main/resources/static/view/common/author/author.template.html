@@ -1,0 +1,77 @@
+<div style="padding-top:50px;" ng-if="user">
+	<div class="navbar-fixed-top">
+		<nav class="navbar navbar-home">
+			<div class="container-fluid text-center">
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="icon pull-left"><a ng-click="setAnimateType('slide-out-right');$state.back()" class="as-text"><i class="fa fa-angle-left fa-2x"></i></a></div>
+					</div>
+					<div class="col-xs-6">
+						<h3 class="title">作者详情</h3>
+					</div>
+					<div class="col-xs-3">
+
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<div class="cover">
+		<div class="cover-bg" style="background-image:url(/file/user/{{user.id}})"></div>
+		<div class="cover-front font-white">
+			<div class="container">
+				<h2>{{user.nickname}}</h2>
+				<div class="row">
+					<div class="col-xs-6">
+						<span class="text-center inline-block vertical-middle font-lighter">
+							<span>{{user.followeeSize}}</span><br/><span>关注</span>
+						</span>
+						<span class="text-center inline-block vertical-middle font-lighter" style="margin:0px 10px;">|</span>
+						<span class="text-center inline-block vertical-middle font-lighter" >
+							<span>{{user.followerSize}}</span><br/><span>粉丝</span>
+						</span>
+					</div>
+					<div class="col-xs-6 text-right">
+						<a class="btn" ng-class="{'btn-red-haze-o':!user.followed,'btn-grey-salsa-o':user.followed}" ng-click="toggleFollow()">
+							<span class="fa-stack">
+								<i class="fa fa-user-o fa-stack-2x"></i>
+								<i class="fa fa-stack-1x" style="left: 10px;top: 6px;" ng-class="{'fa-plus':!user.followed,'fa-check':user.followed}"></i>
+							</span>
+							<span><small>{{user.followed?'已':''}}关注</small></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="block">
+		<div class="container">
+			<div class="block-title">
+				<span>作者简介</span>
+			</div>
+			<div class="block-content">
+				{{user.description || '该用户还没有写个人简介'}}
+			</div>
+		</div>
+	</div>
+	<div class="block">
+		<div class="container">
+			<div class="block-title">
+				<span><i class="fa fa-toggle-right inline-icon font-red-haze"></i>专辑({{user.contentGroups.length}})</span>
+				<div class="link"></div>
+			</div>
+			<div class="row list-item" ng-repeat="contentGroup in user.contentGroups" ui-sref="contentgroup({contentGroupId:contentGroup.id})" ng-click="setAnimateType('slide-in-right')">
+				<div class="col-xs-3">
+					<thumbnail type="'contentgroup'" id="contentGroup.id"/>
+				</div>
+				<div class="col-xs-8">
+					<h4>{{contentGroup.name}}</h4>
+					<div class="font-grey-mint"><small>{{contentGroup.description || '&nbsp'}}</small></div>
+					<div class="font-grey-mint"><small>内容：{{contentGroup.contentSize}} 浏览：{{contentGroup.pv}}</small></div>
+				</div>
+				<div class="col-xs-1 arrow"><i class="fa fa-angle-right"></i></div>
+			</div>
+		</div>
+	</div>
+</div>
